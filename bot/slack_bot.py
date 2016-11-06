@@ -33,7 +33,7 @@ class SlackBot(object):
         Args:
             resource (dict of Resource JSON): See message payloads - https://beepboophq.com/docs/article/resourcer-api
         """
-        logger.debug('Starting bot for resource: {}'.format(resource))
+        logger.info('Starting bot for resource: {}'.format(resource))
         if 'resource' in resource and 'SlackBotAccessToken' in resource['resource']:
             res_access_token = resource['resource']['SlackBotAccessToken']
             self.clients = SlackClients(res_access_token)
